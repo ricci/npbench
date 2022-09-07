@@ -5,15 +5,15 @@
     defaultPackage.x86_64-linux =
       with nixpkgs.legacyPackages.x86_64-linux;
       let 
-        my-python-packages = python-packages: with python-packages; [
+        python-with-my-packages = python310.withPackages
+         (python-packages: with python-packages; [
           matplotlib
           numpy
           pandas
           #pygount
           scipy
           setuptools
-        ];
-        python-with-my-packages = python310.withPackages my-python-packages;
+        ]);
       in
       stdenv.mkDerivation {
         name = "NPbench";
