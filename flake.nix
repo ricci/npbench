@@ -13,7 +13,7 @@
           scipy
           setuptools
         ];
-        python-with-my-packages = python3.withPackages my-python-packages;
+        python-with-my-packages = python310.withPackages my-python-packages;
       in
       stdenv.mkDerivation {
         name = "NPbench";
