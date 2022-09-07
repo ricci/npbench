@@ -3,7 +3,7 @@ import difflib
 import time
 
 from npbench.infrastructure import Benchmark, Framework, utilities as util
-from pygount import SourceAnalysis
+#from pygount import SourceAnalysis
 
 
 class LineCount(object):
@@ -21,8 +21,9 @@ class LineCount(object):
 
         if self.numpy:
             np_file, _ = self.numpy.impl_files(self.bench)[0]
-            np_analysis = SourceAnalysis.from_file(np_file, "pygount")
+            #np_analysis = SourceAnalysis.from_file(np_file, "pygount")
             # print(np_analysis.code_count)
+            np_analysis = None
         else:
             np_analysis = None
 
